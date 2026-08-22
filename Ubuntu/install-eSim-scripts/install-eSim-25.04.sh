@@ -163,9 +163,15 @@ function installDependency
     set +e      # Temporary disable exit on error
     trap "" ERR # Do not trap on error of any command
 
-    # Update apt repository
-    echo "Updating apt index files..................."
-    sudo apt-get update
+   # Disable obsolete CD-ROM repository if present
+if grep -qE '^[[:space:]]*deb .*file:///cdrom' /etc/apt/sources.list 2>/dev/null; then
+    echo "Disabling obsolete CD-ROM repository..."
+    sudo sed -i 's|^[[:space:]]*deb .*file:///cdrom|# &|' /etc/apt/sources.list
+fi
+
+# Update apt repository
+echo "Updating apt index files..................."
+sudo apt-get update
     
     set -e      # Re-enable exit on error
     trap error_exit ERR
