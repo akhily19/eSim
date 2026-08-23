@@ -356,7 +356,7 @@ if [ $option == "--install" ];then
     
     echo -n "Is your internet connection behind proxy? (y/n): "
     read getProxy
-    if [ $getProxy == "y" -o $getProxy == "Y" ];then
+    if [[ "$getProxy" == "y" || "$getProxy" == "Y" ]]; then
         echo -n 'Proxy Hostname :'
         read proxyHostname
 
@@ -386,7 +386,7 @@ if [ $option == "--install" ];then
 
         echo "Install with proxy"
 
-    elif [ $getProxy == "n" -o $getProxy == "N" ];then
+    elif [[ "$getProxy" == "n" || "$getProxy" == "N" ]]; then
         echo "Install without proxy"
     
     else
