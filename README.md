@@ -1,17 +1,26 @@
-eSim Packaging
-====
+# eSim Ubuntu 25.04 Compatibility and Installer Improvements
 
-It contains all the documentation for packaging eSim for distribution.
+## Overview
 
+This project focuses on improving the compatibility of the eSim EDA Suite installer with Ubuntu 25.04.
 
-# Packaging eSim for Distribution:
+The work addresses NGHDL/LLVM compatibility, Python package installation, KiCad 8 configuration, proxy handling, and uninstall confirmation handling.
 
-1. eSim is currently packaged and distributed for Ubuntu OS (Linux) and MS Windows OS.
+## Environment
 
-2. Refer the [documentation](Version_Change.md) for the changes to be done when a new release is to be made.
+- OS: Ubuntu 25.04
+- Virtualization: VirtualBox
+- CPU: 1 core
+- RAM: ~1.6 GB
+- Python: 3.13.3
+- KiCad: 8.0.8
+- Branch: `installers`
 
-> Note: These changes have to be made `first` before proceeding with the packaging on either platform.
+## Key Improvements
 
-3. Refer the [documentation](Ubuntu/README.md) to package eSim for Ubuntu OS.
+### NGHDL and LLVM Compatibility
 
-4. Refer the [documentation](Windows/README.md) to package eSim for Windows OS.
+Updated NGHDL support for Ubuntu 25.04 and configured GHDL to use LLVM 18.
+
+```bash
+./configure --with-llvm-config=/usr/bin/llvm-config-18
