@@ -416,7 +416,7 @@ if [ $option == "--install" ];then
 elif [ $option == "--uninstall" ];then
     echo -n "Are you sure? It will remove eSim completely including KiCad, Makerchip, NGHDL and SKY130 PDK along with their models and libraries (y/n):"
     read getConfirmation
-    if [ $getConfirmation == "y" -o $getConfirmation == "Y" ];then
+    if [[ "$getConfirmation" == "y" || "$getConfirmation" == "Y" ]]; then
         echo "Removing eSim............................"
         sudo rm -rf $HOME/.esim $HOME/Desktop/esim.desktop /usr/bin/esim /usr/share/applications/esim.desktop
         echo "Removing KiCad..........................."
@@ -448,7 +448,7 @@ elif [ $option == "--uninstall" ];then
         else
             echo -e "\nCannot find \"nghdl\" directory. Please remove it manually"
         fi
-    elif [ $getConfirmation == "n" -o $getConfirmation == "N" ];then
+    elif [[ "$getConfirmation" == "n" || "$getConfirmation" == "N" ]]; then
         exit 0
     else 
         echo "Please select the right option."
