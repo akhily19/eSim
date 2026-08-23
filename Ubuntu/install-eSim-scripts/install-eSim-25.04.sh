@@ -208,26 +208,26 @@ sudo apt-get update
     sudo apt install -y python3-pip
 
     echo "Installing Watchdog........................"
-    pip3 install watchdog
+    pip install watchdog
 
     echo "Installing Hdlparse........................"
-    pip3 install --upgrade https://github.com/hdl/pyhdlparser/tarball/master
+    pip install --upgrade https://github.com/hdl/pyhdlparser/tarball/master
 
     echo "Installing Makerchip......................."
-    pip3 install makerchip-app
+    pip install makerchip-app
 
     echo "Installing SandPiper Saas.................."
-    pip3 install sandpiper-saas
+    pip install sandpiper-saas
 
    
     echo "Installing Hdlparse......................"
-    pip3 install hdlparse
+    pip install hdlparse
 
     echo "Installing matplotlib................"
-    pip3 install matplotlib
+    pip install matplotlib
 
     echo "Installing PyQt5............."
-    pip3 install PyQt5  
+    pip install PyQt5  
 }
 
 
